@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deep Study - Subjects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="subjectPage" style="opacity: 1; pointer-events: auto;">
+    <div class="topbar">Countdown⏳ <span id="countdown">Loading...</span></div>
+    <div class="shayari-box">
+      मा तेरे पसीने की हर एक बूंद को मोती सा चमकाऊंगा,<br>
+      तू सपने बड़े देखना मा, पूरा करके मैं दिखलाऊंगा।
+    </div>
+    <h3 class="heading">मंज़िल की ओर बढ़े 🥹</h3>
+    <div class="divider"></div>
+    <div class="subject-list" id="subject-list">
+        <div class="loader"></div> 
+    </div>
+  </section>
+  
+  <script>
+    window.onload = function() {
+      const userData = JSON.parse(localStorage.getItem('deepStudyUser'));
+
+      if (!userData || !userData.examDate) {
+        window.location.replace('study.html');
+        return;
+      }
+
+      startCountdown(userData.examDate);
+      loadSubjects(); 
+    };
+
+    function startCountdown(examDate) {
+      const countdownEl = document.getElementById('countdown');
+      const exam = new Date(examDate);
+
+      if (isNaN(exam)) {
+        countdownEl.textContent = "Invalid Date";
+        return;
+      }
+
+      const interval = setInterval(() => {
+        const now = new Date();
+        const diff = exam - now;
+
+        if (diff <= 0) {
+          countdownEl.textContent = "🎉 Exam Day!";
+          clearInterval(interval);
+          return;
+        }
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / (1000 * 60)) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+        
+        countdownEl.textContent = `${d}d ${h}h ${m}m ${s}s`;
+      }, 1000);
+    }
+
+    // --- YAHAN BADLAV KIYA GAYA HAI ---
+    async function loadSubjects() {
+      const subjectListContainer = document.getElementById('subject-list');
+      const SUBJECTS_URL = 'subjects/subjects.json';
+      const CACHE_NAME = 'quiz-files-v9';
+
+      try {
+        const response = await fetch(SUBJECTS_URL);
+        if (!response.ok) throw new Error('Network response failed');
+        
+        const subjectsData = await response.json();
+        displaySubjects(subjectsData);
+
+      } catch (error) {
+        console.warn('Failed to fetch from network, trying cache...', error);
+        
+        try {
+            const cache = await caches.open(CACHE_NAME);
+            const cachedResponse = await cache.match(SUBJECTS_URL);
+            
+            if (cachedResponse) {
+              const subjectsData = await cachedResponse.json();
+              displaySubjects(subjectsData);
+            } else {
+              throw new Error('Not found in cache');
+            }
+        } catch (cacheError) {
+             console.error('Failed to load subjects from cache:', cacheError);
+             subjectListContainer.innerHTML = `<p style="text-align:center; color:white;">Subjects लोड करने में विफल।</p>`;
+             setTimeout(() => { window.location.href = 'offline.html'; }, 2000);
+        }
+      }
+    }
+
+    function displaySubjects(subjects) {
+      const subjectListContainer = document.getElementById('subject-list');
+      subjectListContainer.innerHTML = '';
+
+      subjects.forEach(subject => {
+        const subjectBox = document.createElement('div');
+        subjectBox.className = 'subject-box';
+        subjectBox.textContent = subject.name;
+        
+        if (subject.backgroundColor) {
+          subjectBox.style.backgroundColor = subject.backgroundColor;
+          subjectBox.style.color = subject.color || 'white';
+        }
+
+        if (subject.url) {
+          subjectBox.onclick = () => window.location.href = subject.url;
+        } else {
+          subjectBox.onclick = () => openTopics(subject.id);
+        }
+
+        subjectListContainer.appendChild(subjectBox);
+      });
+    }
+
+    function openTopics(subjectId) {
+      window.location.href = `topics.html?subject=${subjectId}`;
+    }
+  </script>
+</body>
+</html>

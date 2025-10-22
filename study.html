@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deep Study - Your Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="gradient-animated">
+
+  <section id="studyPage" style="opacity: 1; pointer-events: auto;">
+    <h2>WELCOME TO DEEP STUDY</h2>
+    <p class="shayari">लग चुकी है तलब मंजिल की अब खुद को आग में झोंकना होगा,<br> मुश्किलें कहती हैं मारा जाएगा, हौसला कहता है देख लेंगे।।</p>
+    
+    <form id="userForm">
+      <input type="text" id="username" placeholder="Your Name" required>
+      <input type="text" id="exam" placeholder="Target Exam" required>
+      <label for="examDate">📅 Exam Date चुनें:</label>
+      <input type="date" id="examDate" required>
+      <textarea id="todayTarget" placeholder="आज का Target (क्यों ना मैं खुद को आज थोड़ा और बेहतर बनाऊं 😊)" rows="3"></textarea>
+      <button type="submit" class="continue-btn">Continue</button>
+    </form>
+
+    <button class="info-btn" onclick="showInfo()">ℹ️ Info</button>
+  </section>
+  
+  <script>
+    const userForm = document.getElementById('userForm');
+
+    // --- नया फंक्शन: offline.html को कैश करने के लिए ---
+    async function cacheOfflinePage() {
+      // यह कैश का नाम आपके service-worker.js से मेल खाना चाहिए
+      const CACHE_NAME = 'quiz-files-v6';
+
+      try {
+        // सर्वर से latest version की जानकारी प्राप्त करें
+        const versionResponse = await fetch('version.json?v=' + new Date().getTime()); // Cache busting
+        const serverVersionData = await versionResponse.json();
+        const serverOfflineVersion = serverVersionData.offlineVersion;
+
+        // localStorage से पुराना version प्राप्त करें
+        const localOfflineVersion = localStorage.getItem('offlineVersion');
+
+        // अगर version अलग है या पहले से मौजूद नहीं है, तो offline.html को फिर से कैश करें
+        if (serverOfflineVersion !== localOfflineVersion) {
+          console.log('New offline version found. Caching offline.html...');
+          const cache = await caches.open(CACHE_NAME);
+          cache.add('/offline.html');
+          
+          // नया version localStorage में सेव करें
+          localStorage.setItem('offlineVersion', serverOfflineVersion);
+          console.log('offline.html has been cached successfully.');
+        } else {
+          console.log('Offline page is already up to date in cache.');
+        }
+      } catch (error) {
+        console.error('Failed to cache offline page:', error);
+        // यदि कोई त्रुटि होती है, तो भी उपयोगकर्ता को आगे बढ़ने दें
+      }
+    }
+
+    function checkExistingUser() {
+      const userDataJSON = localStorage.getItem('deepStudyUser');
+      if (userDataJSON) {
+        const userData = JSON.parse(userDataJSON);
+        const examDate = new Date(userData.examDate);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); 
+        if (examDate < today) {
+          localStorage.removeItem('deepStudyUser');
+          return null; 
+        }
+        return userData;
+      }
+      return null;
+    }
+
+    function populateAndLockForm() {
+      const userData = checkExistingUser();
+      if (!userData) {
+        return; 
+      }
+
+      document.getElementById('username').value = userData.name || '';
+      document.getElementById('exam').value = userData.exam || '';
+      document.getElementById('examDate').value = userData.examDate || '';
+      document.getElementById('todayTarget').value = userData.todayTarget || '';
+
+      document.getElementById('username').disabled = true;
+      document.getElementById('exam').disabled = true;
+      document.getElementById('examDate').disabled = true;
+
+      const targetInput = document.getElementById('todayTarget');
+      const targetSetTime = userData.targetSetTime;
+      const twelveHoursInMillis = 12 * 60 * 60 * 1000;
+      const currentTime = new Date().getTime();
+
+      if (targetSetTime && (currentTime - targetSetTime < twelveHoursInMillis)) {
+        targetInput.disabled = true;
+        targetInput.placeholder = "आप अगला टारगेट 12 घंटे बाद सेट कर सकते हैं।";
+      } else {
+        targetInput.disabled = false;
+      }
+    }
+
+    // --- फॉर्म सबमिशन इवेंट में बदलाव ---
+    userForm.addEventListener('submit', async (e) => { // async जोड़ा गया
+      e.preventDefault();
+      
+      const isNameDisabled = document.getElementById('username').disabled;
+      const existingData = JSON.parse(localStorage.getItem('deepStudyUser')) || {};
+
+      const userData = {
+          name: isNameDisabled ? existingData.name : document.getElementById('username').value,
+          exam: isNameDisabled ? existingData.exam : document.getElementById('exam').value,
+          examDate: isNameDisabled ? existingData.examDate : document.getElementById('examDate').value,
+          todayTarget: document.getElementById('todayTarget').value,
+          savedOn: new Date().toISOString()
+      };
+      
+      if(!document.getElementById('todayTarget').disabled) {
+          userData.targetSetTime = new Date().getTime();
+      } else {
+          userData.targetSetTime = existingData.targetSetTime;
+      }
+
+      localStorage.setItem('deepStudyUser', JSON.stringify(userData));
+      
+      // --- नया फंक्शन यहाँ कॉल किया गया ---
+      // subjects.html पर जाने से पहले, offline पेज को कैश करने का प्रयास करें
+      cacheOfflinePage();
+
+      window.location.href = 'subjects.html';
+    });
+
+    function showInfo() {
+      alert(
+        "✨ Deep Study में आपका स्वागत है! ✨\n\n" +
+        "यह ऐप आपकी परीक्षा की तैयारी को बेहतर बनाने के लिए बनाया गया है।\n\n" +
+        "1. अपना नाम और परीक्षा की जानकारी भरकर शुरुआत करें।\n" +
+        "2. हर दिन का एक लक्ष्य निर्धारित करें और उसे पूरा करें।\n" +
+        "3. अलग-अलग विषयों पर क्विज़ देकर अपनी प्रगति को ट्रैक करें।\n" +
+        "4. सलाह : सभी Questions और Options को ध्यान से पढ़ें । \n\n"+
+        "हमारा उद्देश्य आपको GK के सभी छोटे - बड़े Questions याद करना है । इसलिए रोज Quiz लगाए और समय समय पर उनका Revison करे। \n\n" +
+        "पढ़ते रहें, बढ़ते रहें! 🚀"
+      );
+    }
+
+    populateAndLockForm();
+  </script>
+  </body>
+</html>

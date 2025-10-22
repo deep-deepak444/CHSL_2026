@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topics</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  	body {
+ 	   background-color: #e0f7fa;
+    	background-image: linear-gradient(135deg, #e0f7fa 0%, #c8e6c9 100%);
+  	}
+	</style>
+</head>
+<body>
+  <div class="header-bar">
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    <span id="subject-title">📚 Topics</span>
+  </div>
+  
+  <div class="topics-container" id="topics-list">
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const subject = urlParams.get("subject");
+
+    if (!subject) {
+      window.location.replace('subjects.html');
+    }
+
+    document.getElementById("subject-title").textContent = "📚 " + subject.replace(/_/g, ' ').toUpperCase();
+
+    // --- YAHAN BADLAV KIYA GAYA HAI ---
+    async function loadTopics() {
+      const listContainer = document.getElementById("topics-list");
+      const ALL_TOPICS_URL = 'subjects/topics.json';
+      const CACHE_NAME = 'quiz-files-v6';
+
+      try {
+        const response = await fetch(ALL_TOPICS_URL);
+        if (!response.ok) throw new Error('Network response failed to fetch all topics.');
+
+        const allTopicsData = await response.json();
+        const topicsForSubject = allTopicsData[subject];
+        
+        displayTopics(topicsForSubject);
+        
+        // Cache individual topic files if they exist
+        if (topicsForSubject && topicsForSubject.length > 0) {
+            cacheIndividualTopics(topicsForSubject);
+        }
+
+      } catch (error) {
+        console.warn('Failed to fetch topics from network, trying cache...', error);
+        
+        try {
+            const cache = await caches.open(CACHE_NAME);
+            const cachedResponse = await cache.match(ALL_TOPICS_URL);
+
+            if (cachedResponse) {
+                const allTopicsData = await cachedResponse.json();
+                const topicsForSubject = allTopicsData[subject];
+                displayTopics(topicsForSubject);
+            } else {
+                throw new Error('Not found in cache');
+            }
+        } catch (cacheError) {
+             console.error('Failed to load topics from cache:', cacheError);
+             listContainer.innerHTML = "<p>अभी तक Youtube SUBSCRIBE कम होने के कारण इस विषय की quiz upload नहीं की गई है । कृपया सहयोग करें।</p>";
+             setTimeout(() => { window.location.href = 'offline.html'; }, 1500);
+        }
+      }
+    }
+
+        function displayTopics(topicsForSubject) {
+        const list = document.getElementById("topics-list");
+        list.innerHTML = "";
+
+        if (topicsForSubject && topicsForSubject.length > 0) {
+            topicsForSubject.forEach(topic => {
+                const card = document.createElement("div");
+                card.className = "topic-card";
+                card.textContent = topic.name;
+
+                // --- सिंगल और डबल क्लिक के लिए नया लॉजिक ---
+                let clickTimer = null;
+
+                card.addEventListener('click', () => {
+                    if (clickTimer === null) {
+                        // यह पहला क्लिक है, तो 250 मिलीसेकंड तक रुकें
+                        clickTimer = setTimeout(() => {
+                            // अगर दूसरा क्लिक नहीं आया, तो इसे सिंगल-क्लिक मानें
+                            clickTimer = null;
+                            // सिंगल-क्लिक एक्शन: क्विज़ पेज पर जाएं
+                            window.location.href = `quiz.html?subject=${subject}&topic=${topic.file}`;
+                        }, 250); 
+                    } else {
+                        // अगर 250 मिलीसेकंड के अंदर दूसरा क्लिक आ गया
+                        clearTimeout(clickTimer);
+                        clickTimer = null;
+                        // डबल-क्लिक एक्शन: deepstudy पेज पर जाएं
+                        window.location.href = `deepstudy01.html?subject=${subject}&topic=${topic.file}`;
+                    }
+                });
+                
+                list.appendChild(card);
+            });
+        } else {
+            list.innerHTML = "<p>इस विषय के लिए कोई टॉपिक उपलब्ध नहीं है।</p>";
+        }
+    }
+
+    // Yeh function topic files ko pehle se cache kar lega taaki offline.html par list ho sakein
+    async function cacheIndividualTopics(topics) {
+        const CACHE_NAME = 'quiz-files-v9';
+        const cache = await caches.open(CACHE_NAME);
+        
+        topics.forEach(topic => {
+            const topicUrl = `subjects/${subject}/${topic.file}.json`;
+            // Check cache first to avoid re-fetching
+            cache.match(topicUrl).then(response => {
+                if (!response) {
+                    console.log(`Caching topic: ${topic.file}`);
+                    cache.add(topicUrl).catch(err => console.error(`Failed to cache ${topicUrl}`, err));
+                }
+            });
+        });
+    }
+
+    loadTopics();
+    
+    function goBack() {
+      window.location.href = 'subjects.html';
+    }
+  </script>
+</body>
+</html>

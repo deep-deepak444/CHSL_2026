@@ -1,0 +1,256 @@
+{
+  "topic": "INDEX 2025",
+  "questions": [
+    {"question": "ग्लोबल इनोवेशन सूचकांक 2025 में सबसे शीर्ष देश कौन है?", 
+     "options": ["स्विट्जरलैंड", "अमेरिका", "चीन", "भारत"], 
+     "answer": "स्विट्जरलैंड"},
+
+    {"question": "ग्लोबल इनोवेशन सूचकांक 2025 में भारत की रैंक क्या है?", 
+     "options": ["21", "38", "62", "50"], 
+     "answer": "38"},
+
+    {"question": "ग्लोबल इनोवेशन सूचकांक किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["IMF", "WIPO", "UNESCO", "WHO"], 
+     "answer": "WIPO"},
+
+    {"question": "ग्लोबल इनोवेशन सूचकांक भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["IT सेवाएँ", "सेना शक्ति", "पर्यावरण", "खाद्य सुरक्षा"], 
+     "answer": "IT सेवाएँ"},
+
+    {"question": "सतत विकास लक्ष्य (SDG) सूचकांक में 2025 में शीर्ष स्थान किस देश का है?", 
+     "options": ["स्वीडन", "फिनलैंड", "जापान", "भारत"], 
+     "answer": "फिनलैंड"},
+
+    {"question": "सतत विकास लक्ष्य (SDG) सूचकांक में भारत की रैंक क्या है?", 
+     "options": ["34", "67", "99", "120"], 
+     "answer": "99"},
+
+    {"question": "SDG सूचकांक किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["World Bank", "UNDP", "UNSDSN", "WIPO"], 
+     "answer": "UNSDSN"},
+
+    {"question": "SDG सूचकांक भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["सौर ऊर्जा", "सतत विकास नीति", "शिक्षा", "विदेशी निवेश"], 
+     "answer": "सतत विकास नीति"},
+
+    {"question": "ग्लोबल पीस इंडेक्स 2025 में शीर्ष स्थान किस देश का है?", 
+     "options": ["भारत", "नार्वे", "आइसलैंड", "अमेरिका"], 
+     "answer": "आइसलैंड"},
+
+    {"question": "ग्लोबल पीस इंडेक्स 2025 में भारत की रैंक क्या है?", 
+     "options": ["50", "116", "130", "100"], 
+     "answer": "116"},
+
+    {"question": "ग्लोबल पीस इंडेक्स किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["IMF", "Institute for Economics & Peace", "World Bank", "UNESCO"], 
+     "answer": "Institute for Economics & Peace"},
+
+    {"question": "ग्लोबल पीस इंडेक्स भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["शांति, सुरक्षा", "शिक्षा", "आर्थिक वृद्धि", "उत्पादन"], 
+     "answer": "शांति, सुरक्षा"},
+
+    {"question": "मानव विकास सूचकांक (HDI) में 2025 में शीर्ष स्थान किस देश का है?", 
+     "options": ["नॉर्वे", "स्विट्जरलैंड", "कनाडा", "जापान"], 
+     "answer": "स्विट्जरलैंड"},
+
+    {"question": "2025 में मानव विकास सूचकांक में भारत की रैंक क्या है?", 
+     "options": ["80", "101", "132", "160"], 
+     "answer": "132"},
+
+    {"question": "मानव विकास सूचकांक (HDI) किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["UNDP", "WHO", "UNSDSN", "IMF"], 
+     "answer": "UNDP"},
+
+    {"question": "Henley Passport Index 2025 में शीर्ष स्थान किस देश का है?", 
+     "options": ["भारत", "जापान", "स्वीडन", "नॉर्वे"], 
+     "answer": "जापान"},
+
+    {"question": "2025 में भारत की Henley Passport Index में रैंक क्या है?", 
+     "options": ["50", "63", "85", "101"], 
+     "answer": "85"},
+
+    {"question": "Henley Passport Index किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["Henley & Partners", "UNDP", "World Bank", "IMF"], 
+     "answer": "Henley & Partners"},
+
+    {"question": "Henley Passport Index भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["यात्रा स्वतंत्रता", "सेना", "शिक्षा", "नवाचार"], 
+     "answer": "यात्रा स्वतंत्रता"},
+
+    {"question": "QS World University Rankings में शीर्ष स्थान कौन सा विश्वविद्यालय रखता है?", 
+     "options": ["IIT Delhi", "MIT", "ऑक्सफोर्ड", "टोक्यो"], 
+     "answer": "ऑक्सफोर्ड"},
+
+    {"question": "QS World University Rankings में भारत का शीर्ष संस्थान कौन सा है?", 
+     "options": ["IIT Bombay", "IISc Bangalore", "JNU", "IIM Ahmedabad"], 
+     "answer": "IIT Bombay"},
+
+    {"question": "QS World University Rankings किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["World Bank", "Quacquarelli Symonds", "UNDP", "IMF"], 
+     "answer": "Quacquarelli Symonds"},
+
+    {"question": "QS World University Rankings भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["उच्च शिक्षा गुणवत्ता", "कृषि उत्पादन", "सेना डिफेंस", "बैंकिंग"], 
+     "answer": "उच्च शिक्षा गुणवत्ता"},
+
+    {"question": "ग्लोबल हंगर इंडेक्स में शीर्ष स्थान किस देश का है?", 
+     "options": ["अमेरिका", "चीन", "आयरलैंड", "जापान"], 
+     "answer": "आयरलैंड"},
+
+    {"question": "ग्लोबल हंगर इंडेक्स 2025 में भारत की रैंक क्या है?", 
+     "options": ["62", "105", "89", "33"], 
+     "answer": "105"},
+
+    {"question": "ग्लोबल हंगर इंडेक्स किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["UNDP", "Concern Worldwide & Welt Hunger Hilfe", "IMF", "WHO"], 
+     "answer": "Concern Worldwide & Welt Hunger Hilfe"},
+
+    {"question": "ग्लोबल हंगर इंडेक्स भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["कुपोषण", "शिक्षा", "सेना", "तकनीक"], 
+     "answer": "कुपोषण"},
+
+    {"question": "World Press Freedom Index में शीर्ष स्थान किस देश का है?", 
+     "options": ["नार्वे", "भारत", "ब्राजील", "चीन"], 
+     "answer": "नार्वे"},
+
+    {"question": "World Press Freedom Index 2025 में भारत की रैंक क्या है?", 
+     "options": ["78", "120", "162", "99"], 
+     "answer": "162"},
+
+    {"question": "World Press Freedom Index किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["RSF", "IMF", "World Bank", "WHO"], 
+     "answer": "RSF"},
+
+    {"question": "World Press Freedom Index भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["प्रेस स्वतंत्रता", "भोजन", "शिक्षा", "सैन्य"], 
+     "answer": "प्रेस स्वतंत्रता"},
+
+    {"question": "Climate Change Performance Index में शीर्ष स्थान किस देश का है?", 
+     "options": ["जापान", "भारत", "डेनमार्क", "फ्रांस"], 
+     "answer": "डेनमार्क"},
+
+    {"question": "Climate Change Performance Index 2025 में भारत की रैंक क्या है?", 
+     "options": ["6", "10", "14", "25"], 
+     "answer": "10"},
+
+    {"question": "Climate Change Performance Index किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["Germanwatch", "WHO", "IMF", "RSF"], 
+     "answer": "Germanwatch"},
+
+    {"question": "Climate Change Performance Index भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["जलवायु नीति", "शिक्षा", "रक्षा", "रोजगार"], 
+     "answer": "जलवायु नीति"},
+
+    {"question": "Global Competitiveness Index में शीर्ष स्थान किस देश का है?", 
+     "options": ["भारत", "चीन", "अमेरिका", "स्विट्जरलैंड"], 
+     "answer": "स्विट्जरलैंड"},
+
+    {"question": "Global Competitiveness Index 2025 में भारत की रैंक क्या है?", 
+     "options": ["20", "40", "65", "88"], 
+     "answer": "40"},
+
+    {"question": "Global Competitiveness Index किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["World Economic Forum", "IMF", "UNESCO", "WHO"], 
+     "answer": "World Economic Forum"},
+
+    {"question": "Global Competitiveness Index भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["आर्थिक प्रतिस्पर्धा", "रक्षा", "जलवायु", "संस्कृति"], 
+     "answer": "आर्थिक प्रतिस्पर्धा"},
+
+    {"question": "Ease of Doing Business Index 2025 में शीर्ष स्थान किस देश का है?", 
+     "options": ["भारत", "जापान", "न्यूजीलैंड", "अमेरिका"], 
+     "answer": "न्यूजीलैंड"},
+
+    {"question": "Ease of Doing Business Index में भारत की रैंक क्या है?", 
+     "options": ["65", "34", "63", "10"], 
+     "answer": "63"},
+
+    {"question": "Ease of Doing Business Index किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["IMF", "World Bank", "UNDP", "RSF"], 
+     "answer": "World Bank"},
+
+    {"question": "Ease of Doing Business Index भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["व्यापार वातावरण", "शिक्षा", "प्रेस स्वतंत्रता", "रक्षा"], 
+     "answer": "व्यापार वातावरण"},
+
+    {"question": "Global Firepower Index में शीर्ष सैन्य शक्ति किस देश की है?", 
+     "options": ["भारत", "अमेरिका", "चीन", "रूस"], 
+     "answer": "अमेरिका"},
+
+    {"question": "Global Firepower Index 2025 में भारत की रैंक क्या है?", 
+     "options": ["1", "2", "4", "8"], 
+     "answer": "4"},
+
+    {"question": "Global Firepower Index किस संस्था द्वारा प्रकाशित किया जाता है?", 
+     "options": ["Global Firepower", "IMF", "UNDP", "WHO"], 
+     "answer": "Global Firepower"},
+
+    {"question": "Global Firepower Index भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["सैन्य शक्ति", "शिक्षा", "जलवायु", "व्यापार"], 
+     "answer": "सैन्य शक्ति"},
+
+    {"question": "ग्लोबल रेमिटेंस रिपोर्ट में सबसे अधिक रेमिटेंस प्राप्त करने वाला देश कौन सा है?", 
+     "options": ["अमेरिका", "चीन", "भारत", "यूएई"], 
+     "answer": "भारत"},
+
+    {"question": "2025 में ग्लोबल रेमिटेंस रिपोर्ट में भारत की रैंक क्या है?", 
+     "options": ["1", "2", "3", "5"], 
+     "answer": "1"},
+
+    {"question": "ग्लोबल रेमिटेंस रिपोर्ट किस संस्था द्वारा प्रकाशित होती है?", 
+     "options": ["World Bank", "IMF", "RSF", "UNESCO"], 
+     "answer": "World Bank"},
+
+    {"question": "ग्लोबल रेमिटेंस रिपोर्ट भारत की किस विशेषता को दर्शाती है?", 
+     "options": ["प्रवासी भारतीयों की ताकत", "जलवायु", "सैन्य", "शिक्षा"], 
+     "answer": "प्रवासी भारतीयों की ताकत"},
+
+    {"question": "एयर क्वालिटी इंडेक्स में शीर्ष प्रदूषित राजधानी कौन सी है?", 
+     "options": ["दिल्ली", "बीजिंग", "मास्को", "पेरिस"], 
+     "answer": "दिल्ली"},
+
+    {"question": "भारत में एयर क्वालिटी इंडेक्स में दिल्ली की स्थिति क्या है?", 
+     "options": ["1", "5", "10", "20"], 
+     "answer": "1"},
+
+    {"question": "एयर क्वालिटी इंडेक्स किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["IQAir", "IMF", "World Bank", "WIPO"], 
+     "answer": "IQAir"},
+
+    {"question": "एयर क्वालिटी इंडेक्स भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["वायु प्रदूषण", "सेना", "संस्कृति", "निवेश"], 
+     "answer": "वायु प्रदूषण"},
+
+    {"question": "ग्लोबल मल्टीडायमेन्शनल पॉवर्टी इंडेक्स में सबसे कम गरीबी वाला देश कौन है?", 
+     "options": ["स्वीडन", "नॉर्वे", "जापान", "स्विट्जरलैंड"], 
+     "answer": "स्वीडन"},
+
+    {"question": "ग्लोबल मल्टीडायमेन्शनल पॉवर्टी इंडेक्स 2025 में भारत की रैंक क्या है?", 
+     "options": ["50", "62", "66", "70"], 
+     "answer": "66"},
+
+    {"question": "ग्लोबल मल्टीडायमेन्शनल पॉवर्टी इंडेक्स किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["UNDP", "OPHI", "IMF", "RSF"], 
+     "answer": "OPHI"},
+
+    {"question": "ग्लोबल मल्टीडायमेन्शनल पॉवर्टी इंडेक्स भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["बहुआयामी गरीबी", "नवाचार", "सेना", "खाद्य सुरक्षा"], 
+     "answer": "बहुआयामी गरीबी"},
+
+    {"question": "Global Soft Power Index में सबसे ज्यादा सॉफ्ट पावर किस देश की है?", 
+     "options": ["अमेरिका", "जापान", "ब्रिटेन", "भारत"], 
+     "answer": "अमेरिका"},
+
+    {"question": "Global Soft Power Index 2025 में भारत की रैंक क्या है?", 
+     "options": ["20", "27", "30", "45"], 
+     "answer": "27"},
+
+    {"question": "Global Soft Power Index किस संस्था द्वारा जारी किया जाता है?", 
+     "options": ["Brand Finance", "IMF", "World Bank", "UNDP"], 
+     "answer": "Brand Finance"},
+
+    {"question": "Global Soft Power Index भारत की किस विशेषता को दर्शाता है?", 
+     "options": ["सांस्कृतिक प्रभाव", "सैन्य शक्ति", "वायु प्रदूषण", "गरीब आबादी"], 
+     "answer": "सांस्कृतिक प्रभाव"}
+  ]
+}

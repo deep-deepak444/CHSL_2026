@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deep Study</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#001f3f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Deep Study">
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+</head>
+<body class="gradient-animated">
+
+  <div id="install-popup" class="install-popup">
+    <span>Install now DEEP STUDY QUIZ App : </span>
+    <button id="install-btn" class="install-btn">Install</button>
+    <button id="close-install-popup" class="close-btn">&times;</button>
+  </div>
+  <section id="entryPage">
+    <h1 class="welcome-text">
+      WELCOME <br> To Your <br> 🎉DREAM🎉
+    </h1>
+    <button class="start-btn">Start →</button>
+  </section>
+  
+  <script>
+    // --- यहाँ से नया कोड शुरू होता है ---
+    let deferredPrompt;
+    const installPopup = document.getElementById('install-popup');
+    const installBtn = document.getElementById('install-btn');
+    const closeInstallBtn = document.getElementById('close-install-popup');
+
+    // यह इवेंट ऐप को इंस्टॉल करने की क्षमता देता है
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault(); // ब्राउज़र का डिफ़ॉल्ट प्रॉम्प्ट रोकें
+      deferredPrompt = e; // बाद में उपयोग के लिए इवेंट को सहेजें
+    });
+
+    // ऐप इंस्टॉल होने के बाद यह इवेंट फायर होता है
+    window.addEventListener('appinstalled', () => {
+      console.log('PWA was installed');
+      localStorage.setItem('appInstalled', 'true'); // localStorage में सेव करें
+      installPopup.classList.remove('show'); // पॉप-अप छिपाएँ
+      deferredPrompt = null;
+    });
+    // --- यहाँ तक नया कोड है ---
+
+
+    window.onload = function() {
+      const quizProgress = JSON.parse(localStorage.getItem('quizProgress'));
+      const startBtn = document.querySelector('.start-btn');
+
+      // यह जांच करेगा कि क्या कोई क्विज़ अधूरा है
+      if (quizProgress && quizProgress.subject) {
+        startBtn.textContent = "Resume Quiz 🚀";
+        startBtn.onclick = function() {
+          window.location.href = `quiz.html?subject=${quizProgress.subject}&topic=${quizProgress.topic}`;
+        };
+      } 
+      // यदि नहीं, तो यह सामान्य रूप से विवरण पृष्ठ पर जाएगा
+      else {
+        startBtn.onclick = function() {
+          window.location.href = 'study.html';
+        };
+      }
+
+      // --- यहाँ से नया पॉप-अप दिखाने का लॉजिक शुरू होता है ---
+      const appInstalled = localStorage.getItem('appInstalled') === 'true';
+
+      // यदि ऐप पहले से इंस्टॉल नहीं है, तो 3 सेकंड बाद पॉप-अप दिखाएँ
+      if (!appInstalled) {
+        setTimeout(() => {
+          if (deferredPrompt) { // केवल तभी दिखाएँ जब ऐप इंस्टॉल करने योग्य हो
+            installPopup.classList.add('show');
+          }
+        }, 2000);
+      }
+      
+      // इंस्टॉल बटन पर क्लिक को हैंडल करें
+      installBtn.addEventListener('click', async () => {
+        if (!deferredPrompt) {
+          return;
+        }
+        
+        installBtn.textContent = 'Installing...'; // बटन टेक्स्ट बदलें
+        installBtn.disabled = true;
+
+        deferredPrompt.prompt(); // इंस्टॉलेशन प्रॉम्प्ट दिखाएँ
+
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+          installBtn.textContent = 'Install'; // अगर यूजर मना करे तो बटन को वापस ठीक करें
+          installBtn.disabled = false;
+        }
+      });
+      
+      // पॉप-अप बंद करने वाले बटन को हैंडल करें
+      closeInstallBtn.addEventListener('click', () => {
+        installPopup.classList.remove('show');
+      });
+      // --- यहाँ तक पॉप-अप लॉजिक है ---
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Study</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- CSS Variables and Base Setup --- */
+    :root {
+      --primary-color: #0d47a1;
+      --highlight-bg: #ffd700;
+      
+      --light-bg: #f4f7f9;
+      --light-text: #212121;
+      --light-card-bg: #ffffff;
+      --light-header-bg: #0d47a1; 
+      --light-border: #e0e0e0;
+
+      --dark-bg: #121212;
+      --dark-text: #e0e0e0;
+      --dark-card-bg: #1e1e1e;
+      --dark-header-bg: #1e1e1e;
+      --dark-border: #424242;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    body.dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+    
+    /* --- Countdown Screen --- */
+    #countdown-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--light-bg);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease-out;
+    }
+    body.dark-mode #countdown-overlay { background-color: var(--dark-bg); }
+    #countdown-timer {
+      font-size: 6rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    #countdown-message {
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* --- Header --- */
+    .header-bar {
+      background: var(--light-header-bg);
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--light-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: background-color 0.4s ease, border-color 0.4s ease;color: white;
+    }
+    body.dark-mode .header-bar {
+      background: var(--dark-header-bg);
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .back-btn {
+      background: none; border: none; font-size: 24px; cursor: pointer; color: white;
+    }
+    /* ⭐ यह नया कोड जोड़ें */
+	.header-bar {
+	  color: white; 
+	}
+	.back-btn {
+	  color: white;
+	}
+
+    #topic-title-header {
+      font-weight: bold;
+      font-size: 1.1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-grow: 1;
+      text-align: center;
+      margin: 0 15px;
+    }
+    
+    /* Dark Mode Toggle Switch */
+    .theme-switch { display: inline-block; height: 24px; position: relative; width: 44px; flex-shrink: 0; }
+    .theme-switch input { display: none; }
+    .slider { background-color: #ccc; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; transition: .4s; border-radius: 34px; }
+    .slider:before { background-color: #fff; content: ""; height: 16px; left: 4px; bottom: 4px; position: absolute; transition: .4s; width: 16px; border-radius: 50%; }
+    input:checked + .slider { background-color: var(--primary-color); }
+    input:checked + .slider:before { transform: translateX(20px); }
+
+    /* --- Content Area & Watermark --- */
+    .main-content-wrapper {
+        padding: 25px;
+        position: relative;
+    }
+    
+    #content-container {
+  /* यह सभी आधुनिक ब्राउज़र के लिए है */
+	  user-select: none;
+  /* यह पुराने ब्राउज़रों के साथ संगतता के लिए है */
+	  -webkit-user-select: none; /* Safari, Chrome */
+  	-moz-user-select: none;    /* Firefox */
+ 	 -ms-user-select: none;     /* Internet Explorer/Edge */
+      background-color: var(--light-card-bg);
+      border-radius: 12px;
+      padding: 20px 25px;
+      line-height: 1.9;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: background-color 0.4s ease;
+      position: relative;
+      z-index: 2;
+    }
+    body.dark-mode #content-container {
+      background-color: var(--dark-card-bg);
+    }
+    
+    /* --- Navigation Buttons --- */
+    .nav-buttons-container {
+        text-align: center;
+        padding: 30px 0;
+        margin-top: 20px;
+        border-top: 1px solid var(--light-border);
+        display: flex;
+        justify-content: space-around;
+    }
+     body.dark-mode .nav-buttons-container { border-top: 1px solid var(--dark-border); }
+    .nav-btn {
+      padding: 12px 25px;
+      border: 1px solid var(--primary-color);
+      background-color: transparent;
+      color: var(--primary-color);
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-btn:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* --- Highlight Style --- */
+    .highlighted {
+      background-color: var(--highlight-bg);
+      color: #000;
+      padding: 2px 0;
+      border-radius: 3px;
+    }
+
+    /* ✅ Custom highlight selection enable */
+    #content-container {
+      user-select: none;
+    }
+
+    .highlighted, .word {
+      user-select: text;
+    }
+
+    /* Utility Class */
+    .hidden {
+      display: none !important;
+    }
+    
+    /* --- Long Press Selection Box & Menu --- */
+	#selection-box {
+	  position: absolute;
+	  border: 2px dashed var(--primary-color);
+	  background-color: rgba(13, 71, 161, 0.1); /* हल्का नीला बैकग्राउंड */
+	  z-index: 999;
+  	pointer-events: none; /* ताकि यह क्लिक को ब्लॉक न करे */
+	  display: none; /* शुरुआत में छिपा हुआ */
+	}
+
+	#selection-menu {
+  	position: absolute;
+ 	 background-color: var(--light-card-bg);
+	  border: 1px solid var(--light-border);
+ 	 border-radius: 8px;
+ 	 box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+ 	 z-index: 1000;
+	  display: flex;
+ 	 gap: 5px;
+ 	 padding: 5px;
+	}
+
+	body.dark-mode #selection-menu {
+ 	   background-color: var(--dark-card-bg);
+ 	   border: 1px solid var(--dark-border);
+	}
+
+	#selection-menu button {
+ 	 padding: 8px 12px;
+ 	 border: none;
+ 	 background-color: transparent;
+  	cursor: pointer;
+	  font-size: 0.9rem;
+	  font-weight: bold;
+  	color: var(--light-text);
+	  border-radius: 5px;
+	  transition: background-color 0.2s;
+	}
+
+	body.dark-mode #selection-menu button {
+   	 color: var(--dark-text);
+	}
+
+	#selection-menu button:hover {
+	  background-color: var(--light-bg);
+	}
+
+	body.dark-mode #selection-menu button:hover {
+	  background-color: var(--dark-bg);
+	}
+	
+	.word {
+  /* This class is just a marker for JavaScript, no styles needed */
+ 	 display: inline;
+	}
+	
+	/* --- Custom Comment Box --- */
+	#comment-layer {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+ 	 width: 100%;
+  	height: 100%;
+  	pointer-events: none; /* ताकि यह लेयर क्लिक को न रोके */
+	}
+
+	.comment-box {
+	  position: absolute;
+	  border: 2px solid var(--primary-color); /* सॉलिड बॉर्डर */
+	  background-color: rgba(13, 71, 161, 0.1);
+	  padding: 5px 8px;
+ 	 border-radius: 5px;
+	  font-size: 0.9rem;
+	  color: var(--primary-color);
+	  font-weight: bold;
+	  white-space: nowrap;
+  	overflow: hidden;
+ 	 text-overflow: ellipsis;
+  	max-width: 150px; /* बॉक्स की अधिकतम चौड़ाई */
+	}
+
+	body.dark-mode .comment-box {
+    	color: #64b5f6; /* डार्क मोड में हल्का नीला टेक्स्ट */
+	}
+
+
+  </style>
+</head>
+<body>
+
+  <div id="countdown-overlay">
+    <div id="countdown-timer">10</div>
+    <div id="countdown-message">श्वास, समय और किताब</div>
+  </div>
+
+  <div class="header-bar">
+    <button class="back-btn" id="back-button">⬅️</button>
+    <span id="topic-title-header"></span>
+    <div class="theme-switch">
+      <input type="checkbox" id="theme-toggle" />
+      <div class="slider round"></div>
+    </div>
+  </div>
+
+  <div class="main-content-wrapper">
+    <div id="content-container">
+      </div>
+    <div id="comment-layer"></div>
+  </div>
+  <div id="selection-box"></div>
+	<div id="selection-menu" class="hidden">
+ 	 <button id="highlight-btn">Highlight</button>
+ 	 <button id="unhighlight-btn">Remove Highlight</button>
+ 	 <button id="add-comment-btn">Add Comment</button>
+  </div>
+  <script src="deepstudy01.js"></script>
+
+</body>
+</html>

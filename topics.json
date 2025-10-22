@@ -1,0 +1,958 @@
+{
+  "current_affairs": [
+    { "name": "जनवरी 2025 करेंट अफेयर्स", "file": "january_2025_ca" },
+    { "name": "फरवरी 2025 करेंट अफेयर्स", "file": "february_2025_ca" },
+    { "name": "मार्च 2025 करेंट अफेयर्स", "file": "march_2025_ca" },
+    { "name": "अप्रैल 2025 करेंट अफेयर्स", "file": "april_2025_ca" },
+    { "name": "मई 2025 करेंट अफेयर्स", "file": "may_2025_ca" }
+  ],
+
+  "ancient_history": [
+    {
+      "name": "पाषाण काल",
+      "file": "stone_age"
+    },
+    {
+      "name": "सिन्धु घाटी सभ्यता",
+      "file": "indus_valley_civilization"
+    },
+    {
+      "name": "वैदिक सभ्यता",
+      "file": "vedic_civilization"
+    },
+    {
+      "name": "महाजनपद काल",
+      "file": "mahajanapada_period"
+    },
+    {
+      "name": "जैन धर्म",
+      "file": "jainism"
+    },
+    {
+      "name": "बौद्ध धर्म",
+      "file": "buddhism"
+    },
+    {
+      "name": "पारसी/यहूदी धर्म",
+      "file": "zoroastrianism_judaism"
+    },
+    {
+      "name": "मौर्य साम्राज्य",
+      "file": "mauryan_empire"
+    },
+    {
+      "name": "मौर्योत्तर काल",
+      "file": "post_mauryan_period"
+    },
+    {
+      "name": "गुप्त एवं गुप्तोत्तर साम्राज्य",
+      "file": "gupta_and_post_gupta_empire"
+    },
+    {
+      "name": "दक्षिण भारतीय राजवंश (चोल/चालुक्य/पल्लव/संगम)",
+      "file": "south_indian_dynasties"
+    },
+    {
+      "name": "सीमावर्ती राजवंश",
+      "file": "borderline_dynasties"
+    },
+    {
+      "name": "प्राचीनकालीन साहित्य एवं साहित्यकार",
+      "file": "ancient_literature"
+    },
+    {
+      "name": "प्राचीनकालीन स्थापत्य कला/चित्रकला/संगीतकला",
+      "file": "ancient_art_and_architecture"
+    },
+    {
+      "name": "राजपूत राजवंश",
+      "file": "rajput_dynasty"
+    }
+
+  ],
+  
+  "medieval_history": [
+    {
+      "name": "अरब एवं तुर्की आक्रमण (महमूद गजनवी, मुहम्मद गोरी)",
+      "file": "arab_and_turk_invasion"
+    },
+    {
+      "name": "दिल्ली सल्तनत",
+      "file": "delhi_sultanate"
+    },
+    {
+      "name": "गुलाम वंश",
+      "file": "slave_dynasty"
+    },
+    {
+      "name": "खिलजी वंश",
+      "file": "khilji_dynasty"
+    },
+    {
+      "name": "तुगलक वंश",
+      "file": "tughlaq_dynasty"
+    },
+    {
+      "name": "लोदी वंश",
+      "file": "lodi_dynasty"
+    },
+    {
+      "name": "सल्तनत कालीन स्थापत्य एवं चित्रकला",
+      "file": "sultanate_art_and_architecture"
+    },
+    {
+      "name": "विजयनगर/बहमनी साम्राज्य",
+      "file": "vijaynagar_bahmani_empire"
+    },
+    {
+      "name": "भक्ति एवं सूफी आंदोलन",
+      "file": "bhakti_and_sufi_movement"
+    },
+    {
+      "name": "मुगल काल - बाबर",
+      "file": "mughal_period_babur"
+    },
+    {
+      "name": "शेरशाह सूरी",
+      "file": "shershah_suri"
+    },
+    {
+      "name": "मुगल काल - अकबर",
+      "file": "mughal_period_akbar"
+    },
+    {
+      "name": "मुगल काल - जहाँगीर",
+      "file": "mughal_period_jahangir"
+    },
+    {
+      "name": "मुगल काल - शाहजहाँ",
+      "file": "mughal_period_shah_jahan"
+    },
+    {
+      "name": "मुगल काल - औरंगजेब",
+      "file": "mughal_period_aurangzeb"
+    },
+    {
+      "name": "उत्तरवर्ती मुगल शासक",
+      "file": "later_mughal_rulers"
+    },
+    {
+      "name": "मुगल कालीन साहित्य",
+      "file": "mughal_period_literature"
+    },
+    {
+      "name": "मुगल कालीन स्थापत्य एवं चित्रकला",
+      "file": "mughal_art_and_architecture"
+    },
+    {
+      "name": "सिक्ख धर्म",
+      "file": "sikhism"
+    }
+  ],
+  
+  "modern_history": [
+    {
+      "name": "भारत में यूरोपियों का आगमन",
+      "file": "arrival_of_europeans_in_india"
+    },
+    {
+      "name": "मराठों का उदय एवं विकास",
+      "file": "rise_and_development_of_marathas"
+    },
+    {
+      "name": "स्वतंत्र राष्ट्र (मैसूर/बंगाल/पंजाब/अवध)",
+      "file": "independent_states_mysore_bengal"
+    },
+    {
+      "name": "औपनिवेशिक अर्थव्यवस्था",
+      "file": "colonial_economy"
+    },
+    {
+      "name": "आधुनिक भारत में शिक्षा का विकास",
+      "file": "development_of_education_in_modern_india"
+    },
+    {
+      "name": "समाचार पत्र एवं पत्रिकाएँ",
+      "file": "newspapers_and_magazines"
+    },
+    {
+      "name": "1857 का विद्रोह",
+      "file": "revolt_of_1857"
+    },
+    {
+      "name": "किसान विद्रोह एवं किसान आंदोलन",
+      "file": "peasant_revolts_and_movements"
+    },
+    {
+      "name": "जनजातीय/अन्य प्रमुख आंदोलन",
+      "file": "tribal_and_other_major_movements"
+    },
+    {
+      "name": "सामाजिक एवं धार्मिक आंदोलन",
+      "file": "social_and_religious_movements"
+    },
+    {
+      "name": "भारतीय राष्ट्रीय कांग्रेस",
+      "file": "indian_national_congress"
+    },
+    {
+      "name": "बंगाल विभाजन एवं स्वदेशी आंदोलन",
+      "file": "partition_of_bengal_and_swadeshi_movement"
+    },
+    {
+      "name": "मुस्लिम लीग",
+      "file": "muslim_league"
+    },
+    {
+      "name": "दिल्ली दरबार",
+      "file": "delhi_darbar"
+    },
+    {
+      "name": "होमरूल आंदोलन",
+      "file": "homerule_movement"
+    },
+    {
+      "name": "क्रांतिकारी आंदोलन",
+      "file": "revolutionary_movement"
+    },
+    {
+      "name": "रॉलेट एक्ट",
+      "file": "rowlatt_act"
+    },
+    {
+      "name": "जलियाँवाला बाग हत्याकांड",
+      "file": "jallianwala_bagh_massacre"
+    },
+    {
+      "name": "असहयोग/खिलाफत आंदोलन",
+      "file": "non_cooperation_khilafat_movement"
+    },
+    {
+      "name": "स्वराज पार्टी",
+      "file": "swaraj_party"
+    },
+    {
+      "name": "महात्मा गाँधी एवं उनके प्रारम्भिक आंदोलन",
+      "file": "mahatma_gandhi_initial_movements"
+    },
+    {
+      "name": "सविनय अवज्ञा आन्दोलन",
+      "file": "civil_disobedience_movement"
+    },
+    {
+      "name": "साइमन कमीशन",
+      "file": "simon_commission"
+    },
+    {
+      "name": "गाँधी-इरविन समझौता/गोलमेज सम्मेलन",
+      "file": "gandhi_irwin_pact_round_table_conference"
+    },
+    {
+      "name": "पूना पैक्ट",
+      "file": "poona_pact"
+    },
+    {
+      "name": "आजाद हिन्द फौज/सुभाष चन्द्र बोस",
+      "file": "azad_hind_fauj_subhash_chandra_bose"
+    },
+    {
+      "name": "क्रिप्स मिशन/संविधान सभा",
+      "file": "cripps_mission_constituent_assembly"
+    },
+    {
+      "name": "भारत छोड़ो आन्दोलन",
+      "file": "quit_india_movement"
+    },
+    {
+      "name": "कैबिनेट मिशन",
+      "file": "cabinet_mission"
+    },
+    {
+      "name": "प्रांतीय चुनाव",
+      "file": "provincial_election"
+    },
+    {
+      "name": "माउन्टबेटन योजना/भारत विभाजन",
+      "file": "mountbatten_plan_partition_of_india"
+    },
+    {
+      "name": "भारत का संवैधानिक विकास",
+      "file": "constitutional_development_of_india"
+    },
+    {
+      "name": "गवर्नर/गवर्नर जनरल/वायसराय",
+      "file": "governor_generals_viceroys"
+    },
+    {
+      "name": "कथन/नारा/उपाधियाँ",
+      "file": "statements_slogans_titles"
+    },
+    {
+      "name": "ब्रिटिश कालीन प्रमुख इमारत",
+      "file": "monuments_during_british_period"
+    },
+    {
+      "name": "स्वतंत्रता के बाद का भारत",
+      "file": "india_after_independence"
+    }
+  ],
+  
+  "polity": [
+    { "name": "भारत का संवैधानिक विकास", "file": "constitutional_development" },
+    { "name": "भारत का संवैधानिक विकास(भाग 2)", "file": "constitutional_development2" },
+    { "name": "संविधान सभा", "file": "constituent_assembly" },
+    { "name": "संविधान निर्माण की प्रक्रिया", "file": "making_of_constitution" },
+    { "name": "संविधान की प्रस्तावना", "file": "preamble" },
+    { "name": "संविधान की प्रमुख विशेषताएँ", "file": "features_of_constitution" },
+    { "name": "संविधान के स्रोत", "file": "sources_of_constitution" },
+    { "name": "संविधान की अनुसूचियाँ", "file": "schedules" },
+    { "name": "भाग 1: संघ और उसका राज्य क्षेत्र", "file": "part_1_union_and_territory" },
+    { "name": "भाग 2: नागरिकता", "file": "part_2_citizenship" },
+    { "name": "भाग 3: मूल अधिकार", "file": "part_3_fundamental_rights" },
+    { "name": "भाग 4: राज्य की नीति के निदेशक तत्त्व", "file": "part_4_dpsp" },
+    { "name": "भाग 4A: मूल कर्तव्य", "file": "part_4a_fundamental_duties" },
+    { "name": "भाग 5: संघ कार्यपालिका (राष्ट्रपति, उपराष्ट्रपति, प्रधानमंत्री)", "file": "part_5_union_executive" },
+    { "name": "भाग 5: संसद", "file": "part_5_parliament" },
+    { "name": "भाग 5: संघ की न्यायपालिका (उच्चतम न्यायालय)", "file": "part_5_union_judiciary" },
+    { "name": "भाग 5: भारत का नियंत्रक एवं महालेखापरीक्षक (CAG)", "file": "part_5_cag" },
+    { "name": "भाग 6: राज्य कार्यपालिका (राज्यपाल, मुख्यमंत्री)", "file": "part_6_state_executive" },
+    { "name": "भाग 6: राज्य विधानमंडल", "file": "part_6_state_legislature" },
+    { "name": "भाग 6: उच्च न्यायालय और अधीनस्थ न्यायालय", "file": "part_6_high_courts" },
+    { "name": "भाग 8: संघ राज्य क्षेत्र", "file": "part_8_union_territories" },
+    { "name": "भाग 9: पंचायतें", "file": "part_9_panchayats" },
+    { "name": "भाग 9A: नगरपालिकाएँ", "file": "part_9a_municipalities" },
+    { "name": "भाग 9B: सहकारी समितियाँ", "file": "part_9b_cooperative_societies" },
+    { "name": "भाग 11: संघ और राज्यों के बीच संबंध", "file": "part_11_centre_state_relations" },
+    { "name": "भाग 12: वित्त, संपत्ति, संविदाएँ और वाद", "file": "part_12_finance_property" },
+    { "name": "भाग 14: संघ और राज्यों के अधीन सेवाएँ (लोक सेवा आयोग)", "file": "part_14_services_psc" },
+    { "name": "भाग 15: निर्वाचन", "file": "part_15_elections" },
+    { "name": "भाग 17: राजभाषा", "file": "part_17_official_language" },
+    { "name": "भाग 18: आपात उपबंध", "file": "part_18_emergency_provisions" },
+    { "name": "भाग 20: संविधान का संशोधन", "file": "part_20_amendment" },
+    { "name": "संवैधानिक निकाय", "file": "constitutional_bodies" },
+    { "name": "गैर-संवैधानिक निकाय", "file": "non_constitutional_bodies" },
+    { "name": "दल-बदल विरोधी कानून", "file": "anti_defection_law" },
+    { "name": "न्यायिक समीक्षा और न्यायिक सक्रियता", "file": "judicial_review_activism" }
+  ],
+
+  "indian_geography": [
+    {
+      "name": "भारत की भौगोलिक स्थिति",
+      "file": "geographical_location_of_india"
+    },
+    {
+      "name": "भारत का प्राकृतिक विभाजन",
+      "file": "natural_division_of_india"
+    },
+    {
+      "name": "पर्वत एवं चोटी",
+      "file": "mountains_and_peaks"
+    },
+    {
+      "name": "उत्तर भारत के मैदान",
+      "file": "plains_of_north_india"
+    },
+    {
+      "name": "पठार",
+      "file": "plateau"
+    },
+    {
+      "name": "दर्रे",
+      "file": "passes"
+    },
+    {
+      "name": "तटीय क्षेत्र एवं द्वीप",
+      "file": "coastal_areas_and_islands"
+    },
+    {
+      "name": "मरुस्थल",
+      "file": "deserts"
+    },
+    {
+      "name": "झील, जलप्रपात",
+      "file": "lakes_and_waterfalls"
+    },
+    {
+      "name": "हिमनद",
+      "file": "glaciers"
+    },
+    {
+      "name": "अपवाह तन्त्र (नदियाँ)",
+      "file": "drainage_system"
+    },
+    {
+      "name": "नदी घाटी परियोजनाएँ",
+      "file": "river_valley_projects"
+    },
+    {
+      "name": "भारत की जलवायु",
+      "file": "climate_of_india"
+    },
+    {
+      "name": "भारत की मिट्टियाँ",
+      "file": "soils_of_india"
+    },
+    {
+      "name": "वन, वन्यजीव एवं वनस्पतियाँ",
+      "file": "forest_wildlife_vegetation"
+    },
+    {
+      "name": "कृषि एवं पशुपालन",
+      "file": "agriculture_and_animal_husbandry"
+    },
+    {
+      "name": "भारत में खनिज संसाधन",
+      "file": "mineral_resources_in_india"
+    },
+    {
+      "name": "भारत में प्रमुख उद्योग",
+      "file": "major_industries_in_india"
+    },
+    {
+      "name": "परमाणु एवं विद्युत ऊर्जा",
+      "file": "atomic_and_electric_energy"
+    },
+    {
+      "name": "भारत में परिवहन",
+      "file": "transport_in_india"
+    },
+    {
+      "name": "थल परिवहन",
+      "file": "land_transport"
+    },
+    {
+      "name": "जल परिवहन",
+      "file": "water_transport"
+    },
+    {
+      "name": "वायु परिवहन",
+      "file": "air_transport"
+    },
+    {
+      "name": "भारत की जनजाति",
+      "file": "tribes_of_india"
+    },
+    {
+      "name": "भारत की भाषाएँ",
+      "file": "languages_of_india"
+    },
+    {
+      "name": "राज्य एवं केन्द्रशासित प्रदेश",
+      "file": "states_and_union_territories"
+    },
+    {
+      "name": "भारत में पर्यटन स्थल/प्रमुख शहर",
+      "file": "tourist_spots_major_cities"
+    },
+    {
+      "name": "नदियों के किनारे स्थित प्रमुख शहर",
+      "file": "cities_on_river_banks"
+    }
+  ],
+  
+  "world_geography": [
+    {
+      "name": "ब्रह्माण्ड",
+      "file": "universe"
+    },
+    {
+      "name": "सौरमंडल",
+      "file": "solar_system"
+    },
+    {
+      "name": "पृथ्वी की आंतरिक संरचना",
+      "file": "internal_structure_of_earth"
+    },
+    {
+      "name": "अक्षांश और देशांतर",
+      "file": "latitudes_and_longitudes"
+    },
+    {
+      "name": "चट्टानें",
+      "file": "rocks"
+    },
+    {
+      "name": "भूकम्प",
+      "file": "earthquakes"
+    },
+    {
+      "name": "ज्वालामुखी",
+      "file": "volcanoes"
+    },
+    {
+      "name": "आर्द्रता एवं वर्षा",
+      "file": "humidity_and_rainfall"
+    },
+    {
+      "name": "स्थानीय पवन",
+      "file": "local_winds"
+    },
+    {
+      "name": "चक्रवात",
+      "file": "cyclones"
+    },
+    {
+      "name": "वायुमण्डल",
+      "file": "atmosphere"
+    },
+    {
+      "name": "महाद्वीप एवं द्वीप",
+      "file": "continents_and_islands"
+    },
+    {
+      "name": "जलमण्डल",
+      "file": "hydrosphere"
+    },
+    {
+      "name": "महासागरीय अधस्तल का उच्चावच",
+      "file": "relief_of_the_oceanic_floor"
+    },
+    {
+      "name": "महासागरीय धाराएँ",
+      "file": "oceanic_currents"
+    },
+    {
+      "name": "जलडमरूमध्य",
+      "file": "straits"
+    },
+    {
+      "name": "विश्व की प्रमुख झील और जलप्रपात",
+      "file": "world_lakes_and_waterfalls"
+    },
+    {
+      "name": "विश्व के प्रमुख पर्वत और पठार",
+      "file": "world_mountains_and_plateaus"
+    },
+    {
+      "name": "विश्व के प्रमुख मरुस्थल",
+      "file": "world_deserts"
+    },
+    {
+      "name": "घास के मैदान",
+      "file": "grasslands"
+    },
+    {
+      "name": "विश्व की प्रमुख नहरें",
+      "file": "major_canals_of_the_world"
+    },
+    {
+      "name": "विश्व की प्रमुख नदियाँ",
+      "file": "major_rivers_of_the_world"
+    },
+    {
+      "name": "विश्व के प्रमुख देशों की राजधानी एवं मुद्रा",
+      "file": "world_capitals_and_currencies"
+    },
+    {
+      "name": "विश्व के प्रमुख शहर",
+      "file": "major_cities_of_the_world"
+    },
+    {
+      "name": "विश्व की प्रमुख जनजातियाँ",
+      "file": "major_tribes_of_the_world"
+    },
+    {
+      "name": "कृषि एवं पशुपालन",
+      "file": "agriculture_and_animal_husbandry"
+    },
+    {
+      "name": "खनिज/औद्योगिक केन्द्र",
+      "file": "minerals_and_industrial_centres"
+    },
+    {
+      "name": "परिवहन",
+      "file": "transport"
+    },
+    {
+      "name": "मानचित्रण",
+      "file": "cartography"
+    }
+  ],
+
+  "static_gk": [
+    {
+      "name": "कला एवं संस्कृति",
+      "file": "art_and_culture"
+    },
+    {
+      "name": "त्यौहार/उत्सव/मेला",
+      "file": "festivals_and_fairs"
+    },
+    {
+      "name": "नृत्य",
+      "file": "dance_forms"
+    },
+    {
+      "name": "संगीत",
+      "file": "music"
+    },
+    {
+      "name": "चित्रकला",
+      "file": "paintings"
+    },
+    {
+      "name": "भारतीय परिधान",
+      "file": "indian_dress"
+    },
+    {
+      "name": "मार्शल आर्ट/युद्ध कला",
+      "file": "martial_arts"
+    },
+    {
+      "name": "पुस्तकें/लेखक",
+      "file": "books_and_authors"
+    },
+    {
+      "name": "दिन/दिवस",
+      "file": "important_days"
+    },
+    {
+      "name": "पुरस्कार",
+      "file": "awards"
+    },
+    {
+      "name": "प्रमुख अंतर्राष्ट्रीय संगठन/मुख्यालय",
+      "file": "international_organizations_headquarters"
+    },
+    {
+      "name": "अंतरिक्ष कार्यक्रम",
+      "file": "space_programme"
+    },
+    {
+      "name": "भारत का प्रतिरक्षा तंत्र",
+      "file": "defence_system_of_india"
+    },
+    {
+      "name": "खेल",
+      "file": "sports"
+    },
+    {
+      "name": "प्रमुख राष्ट्रीय संस्थान/संगठन",
+      "file": "major_national_institutions_organizations"
+    },
+    {
+      "name": "प्रमुख स्थल",
+      "file": "major_sites"
+    },
+    {
+      "name": "प्रमुख व्यक्तित्व",
+      "file": "famous_personalities"
+    },
+    {
+      "name": "विश्व/भारत में प्रथम",
+      "file": "first_in_world_and_india"
+    }
+  ],
+  
+  "biology": [
+    {
+      "name": "जीव विज्ञान की प्रमुख शाखाएँ",
+      "file": "major_branches_of_biology"
+    },
+    {
+      "name": "कोशिका (सिद्धांत/संरचना/कार्य)",
+      "file": "cell_biology"
+    },
+    {
+      "name": "ऊतक",
+      "file": "tissues"
+    },
+    {
+      "name": "जैव अणु (प्रोटीन/लिपिड/न्यूक्लिक अम्ल)",
+      "file": "bio_molecules"
+    },
+    {
+      "name": "आनुवांशिकी",
+      "file": "genetics"
+    },
+    {
+      "name": "जैव विकास",
+      "file": "organic_evolution"
+    },
+    {
+      "name": "वर्गिकी",
+      "file": "taxonomy"
+    },
+    {
+      "name": "जन्तु जगत",
+      "file": "animal_kingdom"
+    },
+    {
+      "name": "मानव पाचन तंत्र",
+      "file": "human_digestive_system"
+    },
+    {
+      "name": "रुधिर परिसंचरण तंत्र",
+      "file": "blood_circulatory_system"
+    },
+    {
+      "name": "श्वसन तंत्र",
+      "file": "respiratory_system"
+    },
+    {
+      "name": "उत्सर्जन तंत्र",
+      "file": "excretory_system"
+    },
+    {
+      "name": "तंत्रिका तंत्र",
+      "file": "nervous_system"
+    },
+    {
+      "name": "कंकाल तंत्र",
+      "file": "skeletal_system"
+    },
+    {
+      "name": "अन्तःस्रावी तंत्र",
+      "file": "endocrine_system"
+    },
+    {
+      "name": "प्रजनन तंत्र",
+      "file": "reproductive_system"
+    },
+    {
+      "name": "प्रोटीन, विटामिन एवं खनिज पदार्थ",
+      "file": "proteins_vitamins_and_minerals"
+    },
+    {
+      "name": "मानव रोग, लक्षण एवं उपचार",
+      "file": "human_diseases"
+    },
+    {
+      "name": "पादप जगत",
+      "file": "plant_kingdom"
+    },
+    {
+      "name": "पादप आकारिकी एवं कार्यिकी",
+      "file": "plant_morphology_and_physiology"
+    },
+    {
+      "name": "पौधों में जनन",
+      "file": "reproduction_in_plants"
+    },
+    {
+      "name": "आर्थिक महत्व के जीव एवं वनस्पतियाँ",
+      "file": "economic_importance_of_fauna_flora"
+    },
+    {
+      "name": "आनुवांशिकी इंजीनियरिंग एवं बायोटेक्नोलॉजी",
+      "file": "genetic_engineering_and_biotechnology"
+    },
+    {
+      "name": "प्रमुख जीववैज्ञानिक और आविष्कार",
+      "file": "major_biologists_and_inventions"
+    }
+  ],
+
+  "chemistry": [
+    {
+      "name": "रसायन विज्ञान: एक परिचय",
+      "file": "chemistry_introduction"
+    },
+    {
+      "name": "परमाणु संरचना",
+      "file": "atomic_structure"
+    },
+    {
+      "name": "परमाणु नाभिक",
+      "file": "atomic_nucleus"
+    },
+    {
+      "name": "गैसीय नियम",
+      "file": "gaseous_law"
+    },
+    {
+      "name": "रेडियोएक्टिवता एवं नाभिकीय ऊर्जा",
+      "file": "radioactivity_and_nuclear_energy"
+    },
+    {
+      "name": "संयोजकता/रासायनिक बंधन",
+      "file": "valency_and_chemical_bonding"
+    },
+    {
+      "name": "ऑक्सीकरण और अपचयन",
+      "file": "oxidation_and_reduction"
+    },
+    {
+      "name": "वैद्युत अपघटन/वैद्युत रासायनिक श्रेणी",
+      "file": "electrolysis_and_electrochemical_series"
+    },
+    {
+      "name": "अम्ल, क्षार एवं लवण",
+      "file": "acid_base_and_salt"
+    },
+    {
+      "name": "तत्वों का आवर्ती वर्गीकरण",
+      "file": "periodic_classification_of_elements"
+    },
+    {
+      "name": "अधातुएँ एवं उनके यौगिक",
+      "file": "non_metals_and_their_compounds"
+    },
+    {
+      "name": "धातुएँ एवं उनके यौगिक",
+      "file": "metals_and_their_compounds"
+    },
+    {
+      "name": "ईंधन",
+      "file": "fuel"
+    },
+    {
+      "name": "मिश्रधातु",
+      "file": "alloys"
+    },
+    {
+      "name": "अयस्क एवं धातुकर्म",
+      "file": "ores_and_metallurgy"
+    },
+    {
+      "name": "बहुलक",
+      "file": "polymers"
+    },
+    {
+      "name": "साबुन/डिटर्जेन्ट",
+      "file": "soap_and_detergents"
+    },
+    {
+      "name": "काँच/सीमेंट",
+      "file": "glass_and_cement"
+    },
+    {
+      "name": "विस्फोटक पदार्थ",
+      "file": "explosive_materials"
+    },
+    {
+      "name": "कार्बनिक रसायन",
+      "file": "organic_chemistry"
+    },
+    {
+      "name": "रासायनिक अभिक्रियाएँ",
+      "file": "chemical_reactions"
+    }
+  ],
+
+  "physics": [
+    {
+      "name": "मात्रक और मापक यंत्र",
+      "file": "units_and_measuring_instruments"
+    },
+    {
+      "name": "यांत्रिकी",
+      "file": "mechanics"
+    },
+    {
+      "name": "गुरुत्वाकर्षण",
+      "file": "gravitation"
+    },
+    {
+      "name": "पदार्थ के गुण",
+      "file": "properties_of_matter"
+    },
+    {
+      "name": "ऊष्मा",
+      "file": "heat"
+    },
+    {
+      "name": "ऊष्मागतिकी",
+      "file": "thermodynamics"
+    },
+    {
+      "name": "तरंग",
+      "file": "wave"
+    },
+    {
+      "name": "ध्वनि",
+      "file": "sound"
+    },
+    {
+      "name": "प्रकाश",
+      "file": "light_and_optics"
+    },
+    {
+      "name": "विद्युत",
+      "file": "electricity"
+    },
+    {
+      "name": "चुम्बकत्व",
+      "file": "magnetism"
+    },
+    {
+      "name": "इलेक्ट्रॉनिक्स",
+      "file": "electronics"
+    },
+    {
+      "name": "आधुनिक भौतिकी",
+      "file": "modern_physics"
+    },
+    {
+      "name": "नाभिकीय भौतिकी",
+      "file": "nuclear_physics"
+    },
+    {
+      "name": "आविष्कार",
+      "file": "inventions_in_physics"
+    },
+    {
+      "name": "विविध",
+      "file": "miscellaneous_physics"
+    }
+  ],
+  
+  "computer": [
+    {
+      "name": "कम्प्यूटर: परिचय",
+      "file": "computer_introduction"
+    },
+    {
+      "name": "कम्प्यूटर का विकास",
+      "file": "development_of_computer"
+    },
+    {
+      "name": "इनपुट/आउटपुट डिवाइस",
+      "file": "input_output_devices"
+    },
+    {
+      "name": "मेमोरी",
+      "file": "memory"
+    },
+    {
+      "name": "डिजाइन टूल्स एवं प्रोग्रामिंग भाषाएँ",
+      "file": "design_tools_and_programming_languages"
+    },
+    {
+      "name": "डेटा प्रतिनिधित्व एवं संख्या प्रणाली",
+      "file": "data_representation_and_numerical_system"
+    },
+    {
+      "name": "डेटा संचार",
+      "file": "data_transmission"
+    },
+    {
+      "name": "इन्टरनेट",
+      "file": "internet"
+    },
+    {
+      "name": "एम.एस. ऑफिस",
+      "file": "ms_office"
+    },
+    {
+      "name": "एम.एस. विंडो",
+      "file": "ms_windows"
+    },
+    {
+      "name": "शब्द संक्षेप (Abbreviation)",
+      "file": "abbreviations"
+    },
+    {
+      "name": "विविध",
+      "file": "miscellaneous_computer"
+    }
+  ],
+
+  "important_index": [
+    {
+      "name": "Index-2025",
+      "file": "index_2025"
+    }
+  ]
+}
+

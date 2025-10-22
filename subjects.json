@@ -1,0 +1,16 @@
+[
+  { "id": "dashboard", "name": "📊 प्रोग्रेस डैशबोर्ड देखें", "url": "dashboard.html", "backgroundColor": "#001f3f", "color": "white" },
+  { "id": "current_affairs", "name": "📰 Current Affairs" },
+  { "id": "ancient_history", "name": "📜 Ancient History" },
+  { "id": "medieval_history", "name": "🏰 Medieval History" },
+  { "id": "modern_history", "name": "🚂 Modern History" },
+  { "id": "polity", "name": "⚖️ Polity" },
+  { "id": "indian_geography", "name": "🗺️ Indian Geography" },
+  { "id": "world_geography", "name": "🌍 World Geography" },
+  { "id": "static_gk", "name": "🧠 Static GK" },
+  { "id": "biology", "name": "🧬 Biology" },
+  { "id": "chemistry", "name": "🧪 Chemistry" },
+  { "id": "physics", "name": "⚛️ Physics" },
+  { "id": "computer", "name": "💻 Computer" },
+  { "id": "important_index", "name": "📈 INDEX" }
+]

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  	body {
+   	 background-color: #e0f7fa; /* हल्का आसमानी रंग */
+    	background-image: linear-gradient(135deg, #e0f7fa 0%, #c8e6c9 100%); /* आसमानी से हल्के हरे रंग का ग्रेडिएंट */
+  	}
+	</style>
+
+</head>
+<body>
+
+  <div class="header-bar">
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    
+    <div class="shayari">
+      <i><b>ए ज़िंदगी, तू जितनी भी ताक़त लगा ले मुझे गिराने में,<br>
+      मैं हर बार उठकर तुझसे अपनी जीत की कहानी लिख दूँगा।</b></i>
+    </div>
+    
+    <div class="timer" id="timer">50:00</div>
+  </div>
+
+  <div class="topic-bar" id="topic-name">📖 Topic</div>
+
+  <div class="quiz-container">
+    <div id="question-box" class="question-box">प्रश्न लोड हो रहा है...</div>
+    <div id="options" class="options"></div>
+    </div>
+
+  <div id="result-box" class="result-box" style="display:none;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Study - Offline</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="offline-page">
+
+  <div class="countdown-bar">
+    समय बीत रहा है... ⏳ <span id="countdown">Loading...</span>
+  </div>
+
+  <div class="action-bar">
+    <span>🌐 अपने इंटरनेट कनेक्शन की जांच करें</span>
+    <button id="retry-btn">Try Again</button>
+  </div>
+
+  <div class="main-content">
+    <h3 class="content-heading">अपनी पढ़ाई जारी रखें</h3>
+    <div class="cached-list" id="cached-list">
+      <p class="info-message">सेव किए हुए क्विज़ लोड हो रहे हैं...</p>
+    </div>
+  </div>
+
+    <script>
+    // --- लॉजिक 1: काउंटडाउन ---
+    function startCountdown() {
+      const countdownEl = document.getElementById('countdown');
+      try {
+        const userData = JSON.parse(localStorage.getItem('deepStudyUser'));
+        if (!userData || !userData.examDate) {
+          countdownEl.textContent = "परीक्षा की तारीख सेट नहीं है";
+          return;
+        }
+        
+        const exam = new Date(userData.examDate);
+        if (isNaN(exam)) {
+          countdownEl.textContent = "अमान्य तारीख";
+          return;
+        }
+
+        const interval = setInterval(() => {
+          const now = new Date();
+          const diff = exam - now;
+
+          if (diff <= 0) {
+            countdownEl.textContent = "🎉 Exam Day!";
+            clearInterval(interval);
+            return;
+          }
+
+          const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+          const m = Math.floor((diff / (1000 * 60)) % 60);
+          const s = Math.floor((diff / 1000) % 60);
+          countdownEl.textContent = `${d}d ${h}h ${m}m ${s}s`;
+        }, 1000);
+      } catch (e) {
+        countdownEl.textContent = "कोई डेटा नहीं मिला";
+      }
+    }
+
+    // --- लॉजिक 2: ट्राई अगेन बटन ---
+    document.getElementById('retry-btn').addEventListener('click', () => {
+      window.location.reload();
+	});
+
+    // --- लॉजिक 3: कैश की हुई फाइलों की लिस्ट बनाना (अपडेटेड) ---
+    async function listCachedFiles() {
+      const listContainer = document.getElementById('cached-list');
+      listContainer.innerHTML = ''; 
+
+      if (!('caches' in window)) {
+        listContainer.innerHTML = "<p class='info-message'>आपका ब्राउज़र ऑफलाइन स्टोरेज को सपोर्ट नहीं करता।</p>";
+        return;
+      }
+
+      try {
+        const CACHE_NAME = 'quiz-files-v6';
+        const cache = await caches.open(CACHE_NAME);
+        const requests = await cache.keys();
+
+        // --- यहाँ फिल्टर लॉजिक को बेहतर बनाया गया है ---
+        const quizRequests = requests.filter(req => {
+            const pathParts = new URL(req.url).pathname.split('/');
+            // यह सुनिश्चित करता है कि केवल quiz फाइलें ही चुनी जाएं
+            // path ऐसा होना चाहिए: /subjects/subject_name/quiz_file.json
+            // जो 4 भागों में बंटा होता है: ["", "subjects", "subject_name", "quiz_file.json"]
+            return pathParts.length === 4 && pathParts[1] === 'subjects';
+        });
+
+        if (quizRequests.length === 0) {
+          listContainer.innerHTML = "<p class='info-message'>आपने अभी तक कोई क्विज़ नहीं खेला है जो ऑफलाइन उपलब्ध हो।</p>";
+          return;
+        }
+
+        quizRequests.forEach(request => {
+          const url = new URL(request.url);
+          const pathParts = url.pathname.split('/');
+          // pathParts[3] है quiz_file.json और pathParts[2] है subject_name
+          const topicFile = pathParts[3].replace('.json', '');
+          const subject = pathParts[2];
+
+          const formattedTopic = topicFile.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+          const formattedSubject = subject.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+
+          const link = document.createElement('a');
+          link.className = 'cached-item';
+          link.href = `quiz.html?subject=${subject}&topic=${topicFile}`;
+          link.innerHTML = `
+            ${formattedTopic}
+            <span class="subject">विषय: ${formattedSubject}</span>
+          `;
+          listContainer.appendChild(link);
+        });
+
+      } catch (e) {
+        listContainer.innerHTML = "<p class='info-message'>कैश की हुई फाइलों को लोड करने में असमर्थ।</p>";
+        console.error('Error listing cached files:', e);
+      }
+    }
+
+    // --- पेज लोड होने पर सभी फंक्शन चलाना ---
+    window.onload = () => {
+      startCountdown();
+      listCachedFiles();
+    };
+
+  </script>
+
+</body>
+</html>

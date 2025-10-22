@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>प्रोग्रेस डैशबोर्ड</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header-bar">
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    <span>📊 प्रोग्रेस डैशबोर्ड</span>
+  </div>
+
+  <div id="history-container">
+    </div>
+
+  <script>
+	function goBack() {
+	  window.location.href = 'subjects.html'; // यह हमेशा subjects पेज पर ही वापस जाएगा
+	}
+
+    function startRevision(subject, topic) {
+      window.location.href = `quiz.html?subject=${subject}&topic=${topic}`;
+    }
+
+    window.onload = function() {
+      const historyContainer = document.getElementById('history-container');
+      const history = JSON.parse(localStorage.getItem('deepStudyHistory')) || [];
+
+      if (history.length === 0) {
+        historyContainer.innerHTML = "<p style='text-align: center; margin-top: 20px;'>आपने अभी तक कोई क्विज़ पूरा नहीं किया है।</p>";
+        return;
+      }
+      
+      history.reverse().forEach(result => {
+        const card = document.createElement('div');
+        card.className = 'history-card';
+        
+        const formattedTopic = result.topic.replace(/_/g, ' ').toUpperCase();
+        const formattedSubject = result.subject.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        
+        card.innerHTML = `
+          <div class="card-body">
+            <div class="card-info">
+              <h3>${formattedTopic}</h3>
+              <p>विषय: ${formattedSubject}</p>
+              <p class="score">स्कोर: ${result.score} / ${result.total}</p>
+            </div>
+            <button class="revision-btn" onclick="startRevision('${result.subject}', '${result.topic}')">Revision 🔄</button>
+          </div>
+          <p class="date">${result.date}</p>
+        `;
+        
+        historyContainer.appendChild(card);
+      });
+    };
+  </script>
+
+</body>
+</html>
